@@ -22,11 +22,11 @@
         @csrf
         <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" class="form-control" name="name" placeholder="Enter name" required>
+            <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Enter name" required>
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" class="form-control" name="email" placeholder="User Email" required>
+            <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="User Email" required>
         </div>
         <div class="form-group">
             <label for="password">Password</label>
@@ -40,7 +40,7 @@
         <div class="form-group form-check">
             <p><strong>Role<strong></p>
             @foreach ($roles as $role)
-            <input class="form-check-input" type="checkbox" value="" name="roles" value="{{ $role}}">
+            <input class="form-check-input" type="checkbox" name="roles[]" value="{{ $role }}">
             <label class="form-check-label">{{ $role }}</label>
             @endforeach
         </div>

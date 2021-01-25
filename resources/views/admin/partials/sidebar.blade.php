@@ -51,7 +51,23 @@
         <div id="collapse2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{ route('users.index') }}">List Users</a>
-                <a class="collapse-item" href="{{ route('roles.create') }}">Add Roles</a>
+                <a class="collapse-item" href="{{ route('roles.create') }}">Add Role</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Manage Permissions</span>
+        </a>
+        <div id="collapse3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('permission.index') }}">List Permissions</a>
+                <a class="collapse-item" href="{{ route('permission.create') }}">Add Permission</a>
             </div>
         </div>
     </li>

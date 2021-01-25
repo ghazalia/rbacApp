@@ -34,6 +34,8 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
+        // dd($request);
+
         $this->validate($request, [
             'name' => 'required|max:120',
             'email' => 'required|email|unique:users,email',
@@ -41,15 +43,17 @@ class UserController extends Controller
             'roles' => 'required'
         ]);
 
-        $user = User::create($request->only('email', 'name')); //Retrieving only the email and password data
+        $user = User::create($request->only('email', 'name', 'password')); //Retrieving only the email and password data
 
         $roles = $request['roles']; //Retrieving the roles field
 
         //Checking if a role was selected
         if (isset($roles)) {
             foreach ($roles as $role) {
-                $role_r = Role::where('id', '=', $role)->firstOrFail();
-                $user->assignRole($role_r); //Assigning role to user
+                $role_r = Role::where('name', '=', $role)
+                    ->firstOrFail();
+                // dd($role_r);
+                $user->assignRole($role_r->id); //Assigning role to user
             }
         }
 

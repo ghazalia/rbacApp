@@ -11,8 +11,9 @@ class PermissionController extends Controller
 {
     public function index()
     {
-        $permissions = Permission::get();
-        return view('permissions.index', ['permissions' => $permissions]);
+        $permissions = Permission::all();
+        $i = 0;
+        return view('permissions.index', ['permissions' => $permissions, 'i' => $i]);
     }
 
     public function create()
@@ -22,7 +23,7 @@ class PermissionController extends Controller
 
     public function store(StorePermissionRequest $request)
     {
-        Permission::create(['name' => $request['name'], 'guard_name' => $request['guard_name']]);
+        Permission::create(['name' => $request['name']]);
 
         return redirect()
             ->route('permissions.index')

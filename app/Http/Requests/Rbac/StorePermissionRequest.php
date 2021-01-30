@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Rbac;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class StorePermissionRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class StorePermissionRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return Auth::user()->hasRole('Admin');
     }
 
     /**

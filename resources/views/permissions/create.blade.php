@@ -16,7 +16,7 @@
         </ul>
     </div>
     @endif
-    <form method="post" action="{{ route('permission.store') }}">
+    <form method="post" action="{{ route('permissions.store') }}">
         @csrf
         <div class="form-group">
             <label for="name">Name</label>

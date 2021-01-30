@@ -9,7 +9,7 @@
             <h2>Permissions Management</h2>
         </div>
         <div class="float-right">
-            <a class="btn btn-success" href="{{ route('permission.create') }}"> Create New Permission</a>
+            <a class="btn btn-success" href="{{ route('permissions.create') }}"> Create New Permission</a>
         </div>
     </div>
 </div>
@@ -32,8 +32,9 @@
                 <td> {{++$i}}</td>
                 <td> {{ $permission->name }} </td>
                 <td> {{ $permission->guard_name }} </td>
-                <a class="btn btn-primary" href="{{ route('permissions.edit',$permission->id) }}">Edit</a>
-                <a class="btn btn-danger" href="{{ route('permission.delete',$permission->id) }}">Delete</a>
+                <td>
+                    <a class="btn btn-primary" href="{{ route('permissions.edit',$permission->id) }}">Edit</a>
+                </td>
             </tr>
             @endforeach
         </table>

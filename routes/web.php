@@ -29,9 +29,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
-    Route::get('/permission/index', [PermissionController::class, 'index'])->name('permission.index');
-    Route::get('/permission/create', [PermissionController::class, 'create'])->name('permission.create');
-    Route::post('/permission/store', [PermissionController::class, 'store'])->name('permission.store');
+    Route::resource('permissions', PermissionController::class);
 });
 
 

@@ -29,4 +29,25 @@ class PermissionController extends Controller
             ->route('permissions.index')
             ->with('success', 'Permission created');
     }
+
+    public function show(Permission $permission)
+    {
+        return view('permissions.show', compact("permission"));
+    }
+
+    public function edit(Permission $permission)
+    {
+        return view('permissions.edit', compact("permission"));
+    }
+
+    public function update(Permission $permission, StorePermissionRequest $request)
+    {
+        $permission->name = $request['name'];
+
+        $permission->save();
+
+        return redirect()
+            ->route('permissions.index')
+            ->with('success', 'Permission Updated');;
+    }
 }

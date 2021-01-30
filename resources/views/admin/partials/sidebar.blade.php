@@ -66,8 +66,8 @@
         </a>
         <div id="collapse3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{ route('permission.index') }}">List Permissions</a>
-                <a class="collapse-item" href="{{ route('permission.create') }}">Add Permission</a>
+                <a class="collapse-item" href="{{ route('permissions.index') }}">List Permissions</a>
+                <a class="collapse-item" href="{{ route('permissions.create') }}">Add Permission</a>
             </div>
         </div>
     </li>
